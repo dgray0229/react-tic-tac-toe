@@ -16,6 +16,10 @@
             -moz-box-sizing: border-box;
             box-sizing: border-box;
             border: 5px solid black;
+            display: flex;
+            font-size: 5em;
+            justify-content: center;
+            align-items: center;
         }
         .square:hover {
             cursor: pointer;
@@ -35,5 +39,12 @@
     <div class="square"></div>
     <div class="square"></div>
 </div>
+<script>
+    var player1 = 'X', player2 = 'O', board = document.querySelector('.board'), currentTurn = player1;
+    board.addEventListener('click', function(e) {
+        e.target.innerHTML = currentTurn;
+        currentTurn = currentTurn === player1 ? player2 : player1;
+    });
+</script>
 </body>
 </html>
